@@ -17,4 +17,12 @@ router.delete("/api/project/delete/:id", projectActions.destroy);
 
 /* ************************************************************************* */
 
+import messageActions from "./modules/message/messageActions";
+
+router.get("/api/message", messageActions.browse);
+router.get("/api/message/:id", messageActions.read);
+router.put("/api/message/edit/:id", messageActions.edit);
+router.post("/api/message", messageActions.add);
+router.delete("/api/message/delete/:id", messageActions.destroy);
+
 export default router;

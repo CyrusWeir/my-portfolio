@@ -1,145 +1,166 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Grenze+Gotisch:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --heading-font: "Comfortaa", serif;
+  --short-text-font: "Quattrocento Sans", serif;
+  background-color: black;
 }
 
-body {
-  font-family: "Lato", sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #eee;
-  margin: 0;
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading-font);
+  color: white;
+}
+p,
+label {
+  font-family: var(--short-text-font);
+  color: white;
 }
 
-#root {
-  height: 100vh;
-  background-image: url("./assets/images/background.webp");
-  background-size: cover;
-  background-position: top;
+main > section,
+main > article,
+main > header {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: 1fr;
-  align-content: start;
-  padding: 1rem;
+  place-items: center;
+  min-height: 100vh;
 }
 
-header {
-  grid-column: 1 / 2;
-  grid-row: 1;
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all .5s ease-out;
 }
 
-.logo {
-  font-size: larger;
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transition: all .5s ease-in;
 }
 
-.navbar {
-  grid-column: -2 / -1;
-  grid-row: 1;
+/* project card styles */
+.project-card-hidden {
+  opacity: 0;
+  filter: blur(5px);
 }
 
-.navbar ul {
+.project-card-show {
+  opacity: 1;
+  filter: blur(0);
+  transition: all 1s ease-out;
+}
+
+/* Staggered animations for each project card */
+.project-card:nth-child(1) {
+  transition-delay: 0.2s; /* Delay for the first card */
+}
+
+.project-card:nth-child(2) {
+  transition-delay: 0.4s; /* Delay for the second card */
+}
+
+.project-card:nth-child(3) {
+  transition-delay: 0.6s; /* Delay for the third card */
+}
+
+/* ------------------------------------------------------------------ Admin CSS --------------------------------------------------------*/
+#create-project-form {
+  display: grid;
+  align-content: center;
+}
+
+#create-project-form > form {
   display: flex;
-  justify-content: end;
-  gap: 1rem;
-  list-style: none;
+  gap: 16px;
+  flex-direction: column;
+  border: 2px, white, solid;
+  border-radius: 28px;
+  padding: 16px;
+  min-width: 300px;
+  width: 20vw;
 }
-
-.navbar a {
-  text-decoration: none;
-  color: #eee;
+.modify-project-form {
+  display: grid;
+  justify-content: center;
+}
+.modify-project-form > form {
   display: flex;
-  gap: 0.5rem;
-  align-items: center;
+  gap: 16px;
+  flex-direction: column;
+  border: 2px, white, solid;
+  border-radius: 28px;
+  padding: 16px;
+  min-width: 300px;
+  width: 20vw;
+}
+.modify-project-form > form > textarea {
+  min-height: 20vh;
+}
+#create-project-form > form > textarea {
+  min-height: 15vh;
+}
+#projects-to-modify > div {
+  border: 2px, white, solid;
+  border-radius: 28px;
+  padding: 16px;
+  min-width: 300px;
+  width: 20vw;
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+}
+#message-display {
+  align-content: center;
+  gap: 16px;
+}
+#message-display > div {
+  border: 2px, white, solid;
+  border-radius: 28px;
+  padding: 16px;
+  min-width: 300px;
+  width: 20vw;
 }
 
-.navbar a:hover {
-  scale: 110%;
+/* ------------------------------------------------------------------ Project CSS --------------------------------------------------------*/
+
+.project-card {
+  min-height: 80vh;
+}
+.project-card > main {
+  border: 2px, white, solid;
+  border-radius: 28px;
+  padding: 16px;
+  width: 300px;
+  min-width: 20vw;
+}
+.project-card > main > figure > img {
+  min-width: 20vw;
+  width: auto;
+}
+/* ------------------------------------------------------------------ Contact CSS --------------------------------------------------------*/
+#contact-form > form {
+  display: grid;
+  gap: 16px;
+  border: 2px, white, solid;
+  border-radius: 28px;
+  padding: 16px;
+  min-width: 300px;
+  width: 20vw;
 }
 
-.text-box {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  align-self: center;
-  text-align: center;
+#contact-form > form > textarea {
+  min-height: 15vh;
 }
 
-.block-primary {
-  text-transform: uppercase;
-  margin-bottom: 2rem;
+/* ------------------------------------------------------------------ Home CSS --------------------------------------------------------*/
+#about {
+  display: grid;
+  align-content: center;
+}
+#CV {
+  display: grid;
+  align-content: center;
 }
 
-.block-primary-main {
-  font-size: 3em;
-  letter-spacing: 5px;
-  animation: blink 12s infinite;
-}
-
-.block-primary-sub {
-  display: block;
-  font-weight: bold;
-  letter-spacing: 7px;
-}
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all 0.2s;
-  position: relative;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn-white {
-  background-color: #fff;
-  color: #777;
-}
-
-footer {
-  grid-column: -2 / -1;
-  grid-row: 1;
-  align-self: end;
-  text-align: right;
-}
-
-.wcs {
-  text-decoration: none;
-  color: #ff1493ad;
-}
-
-.wcs:hover {
-  text-decoration: underline;
-}
-
-@keyframes blink {
-  20%,
-  24%,
-  55% {
-    color: #111;
-    text-shadow: none;
-  }
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    text-shadow: 0 0 5px #ff1493ad, 0 0 15px #eee, 0 0 20px #ff1493ad, 0 0 40px
-      #a00ac9, 0 0 60px #ff0000, 0 0 10px #970dc5, 0 0 98px #ff0000;
-    color: #fff;
-  }
-}
+/* -------------------------------------------------------------------- nav bar CSS --------------------------------------------------- */

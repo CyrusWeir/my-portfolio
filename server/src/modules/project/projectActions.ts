@@ -98,10 +98,11 @@ const destroy: RequestHandler = async (req, res, next) => {
     await projectRepository.delete(projectId);
 
     // Respond with HTTP 204 (No Content) anyway
-    res.send("Successfully deleted");
+    res.sendStatus(204);
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
   }
 };
+
 export default { browse, read, edit, add, destroy };
