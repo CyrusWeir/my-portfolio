@@ -34,9 +34,7 @@ function Projects() {
 
   return (
     <main>
-      <h1 id="title" className="title">
-        Projects
-      </h1>
+      <h1 id="title">Projects</h1>
       <section id="project-section">
         {fetchedProjects.map((el) => (
           <a href={el.url} key={el.id}>

@@ -36,7 +36,7 @@ function Contact() {
 
   return (
     <main id="title" className={activeSection === "title" ? "show" : "hidden"}>
-      <h1>Contact</h1>
+      <h1 className="persistent-heading">Contact</h1>
       <section id="contact-form">
         <MessageForm />
       </section>

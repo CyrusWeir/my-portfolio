@@ -16,7 +16,7 @@ function ModifyProject() {
 
   return (
     <main className="modify-project-form">
-      <h1>Modify Project</h1>
+      <h1 className="persistent-heading">Modify Project</h1>
       <ProjectForm project={fetchedProject} />
     </main>
   );
