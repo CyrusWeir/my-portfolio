@@ -9,6 +9,7 @@ function ProjectCreateForm() {
     image: "",
     tech: "",
     context: "",
+    video: "",
   });
 
   console.warn("ProjectData:", projectData);

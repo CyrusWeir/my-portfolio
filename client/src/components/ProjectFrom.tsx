@@ -90,6 +90,13 @@ function ProjectForm({ project }: projectProps) {
         name="context"
         onChange={handleInputModification}
       />
+      <label htmlFor="video">video</label>
+      <input
+        type="text"
+        defaultValue={project?.video}
+        name="video"
+        onChange={handleInputModification}
+      />
       <button type="submit">submit</button>
     </form>
   );

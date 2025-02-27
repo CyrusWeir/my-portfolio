@@ -33,18 +33,22 @@ function Projects() {
   }, []);
 
   return (
-    <main>
+    <div className="projects">
       <h1 id="title">Projects</h1>
       <section id="project-section">
         {fetchedProjects.map((el) => (
           <a href={el.url} key={el.id}>
+            <div className="project-card project-card-hidden video-parent">
+              <video src={el.video} autoPlay loop muted />
+              <div className="video-overlay" />
+            </div>
             <div className="project-card project-card-hidden">
               <ProjectCard project={el} />
             </div>
           </a>
         ))}
       </section>
-    </main>
+    </div>
   );
 }
 export default Projects;

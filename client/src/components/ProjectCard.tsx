@@ -8,7 +8,6 @@ function ProjectCard({ project }: projectProps) {
     <main>
       <h2>{project.name}</h2>
       <figure>
-        <img src={project.image} alt={project.name} />
         <figcaption>{project.tech}</figcaption>
       </figure>
       <h3>{project.context}</h3>

@@ -141,17 +141,27 @@ main > header {
 
 .project-card {
   min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
+
 .project-card > main {
-  border: 2px, white, solid;
+  border: 5px, white, solid;
   border-radius: 28px;
   padding: 16px;
-  width: 300px;
+  background-color: black;
+  top: 0;
   min-width: 20vw;
+  /* position: absolute; */
 }
 .project-card > main {
   display: grid;
   justify-items: center;
+  max-width: 70vw;
 }
 #project-section > a {
   text-decoration: none;
@@ -161,6 +171,33 @@ main > header {
 
 .project-card > main > figure > img {
   width: auto;
+}
+.project-card > main > h3 {
+  font-family: var(--short-text-font);
+  font-weight: 100;
+  text-align: center;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 0) 3%,
+    rgba(255, 255, 255, 0) 97%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+.video-parent {
+  position: relative;
 }
 /* ------------------------------------------------------------------ Contact CSS --------------------------------------------------------*/
 #contact-form > form {
@@ -181,6 +218,11 @@ main > header {
 #about {
   display: grid;
   align-content: center;
+}
+#stack {
+  display: grid;
+  align-content: center;
+  text-align: center;
 }
 #CV {
   display: grid;
@@ -208,6 +250,11 @@ main > header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-decoration: none;
+}
+.navigation-bar > ul > li {
+  list-style-type: none;
+  text-decoration: none;
 }
 
 /* The Overlay (background) */
@@ -221,7 +268,6 @@ main > header {
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  background-color: rgb(0, 0, 0); /* Black fallback color */
   background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
@@ -234,6 +280,7 @@ main > header {
   width: 100%; /* 100% width */
   text-align: center; /* Centered text/links */
   margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  text-decoration: none;
 }
 
 /* The navigation links inside the overlay */
@@ -241,6 +288,7 @@ main > header {
   padding: 8px;
   text-decoration: none;
   font-family: var(--heading-font);
+  text-decoration: none;
   font-size: 36px;
   color: #818181;
   display: block; /* Display block instead of inline */

@@ -32,7 +32,7 @@ function Admin() {
         }
       },
       {
-        threshold: 0.5,
+        threshold: 0.4,
       },
     );
 
@@ -70,7 +70,7 @@ function Admin() {
         <h2>Modify Projects</h2>
         {fetchedProjects.map((el) => (
           <div key={el.id}>
-            <h3>Name: {el.name}</h3>{" "}
+            <h3>{el.name}</h3>{" "}
             <button
               type="button"
               onClick={() =>

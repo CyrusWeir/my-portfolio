@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../App.css";
 
+// put the observer in a context, then it can be called in each object, and it avoids repetition and increases legibility.
 function Home() {
   const [activeSection, setActiveSection] = useState("");
 
@@ -21,7 +22,9 @@ function Home() {
       },
     );
 
-    const elementsToObserve = document.querySelectorAll("#title, #about, #CV"); // Or any other selector
+    const elementsToObserve = document.querySelectorAll(
+      "#title, #about, #CV, #stack",
+    ); // Or any other selector
 
     for (const element of elementsToObserve) {
       observer.observe(element);
@@ -49,8 +52,22 @@ function Home() {
         <h2>About</h2>
         <p>
           Australian produce, born in Barmera, educated in Glossop, bachelorised
-          in Adelaide, taught in Roxby Downs, settled in Nantes and ready to
-          join your team.
+          in Adelaide, taught in Roxby Downs, settled in Nantes, France and
+          ready to join your team.
+        </p>
+      </article>
+      <article
+        id="stack"
+        className={activeSection === "stack" ? "show" : "hidden"}
+      >
+        <h2>The Stack</h2>
+        <p>
+          React and JS at the front, and express and MySQL in the back...
+          <br /> <br /> <br /> <br /> ...for now.
+          <br />
+          <br /> <br /> <br />
+          I'm always open to learning a new language - to the point where I
+          moved to France for it's linguistic allure.{" "}
         </p>
       </article>
       <section id="CV" className={activeSection === "CV" ? "show" : "hidden"}>

@@ -5,6 +5,7 @@ export interface projectTypes {
   image: string;
   tech: string;
   context: string;
+  video: string;
 }
 
 export interface projectProps {
