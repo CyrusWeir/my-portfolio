@@ -15,6 +15,13 @@ router.put("/api/project/edit/:id", projectActions.edit);
 router.post("/api/project", projectActions.add);
 router.delete("/api/project/delete/:id", projectActions.destroy);
 
+// router.get("/api/user", userActions.browse)
+// router.get("/api/user/:id", userActions.read);
+// router.put("/api/user/edit/:id", userActions.edit);
+// router.post("/api/user", userActions.add);
+// router.delete("/api/user/delete/:id", userActions.destroy);
+// Define user-related routes
+
 /* ************************************************************************* */
 
 import messageActions from "./modules/message/messageActions";
