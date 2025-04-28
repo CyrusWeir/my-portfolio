@@ -50,11 +50,12 @@ function Home() {
         className={activeSection === "about" ? "show" : "hidden"}
       >
         <h2>About</h2>
-        <p>
-          Australian produce, born in Barmera, educated in Glossop, bachelorised
-          in Adelaide, taught in Roxby Downs, settled in Nantes, France and
-          ready to join your team.
-        </p>
+        <ul>
+          <li>Australian produce,</li> <li>born in Barmera,</li>{" "}
+          <li>educated in Glossop,</li> <li>bachelorised in Adelaide,</li>{" "}
+          <li>taught in Roxby Downs,</li> <li>settled in Nantes, France,</li>{" "}
+          <li>ready to join your team.</li>
+        </ul>
       </article>
       <article
         id="stack"

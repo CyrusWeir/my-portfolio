@@ -49,11 +49,6 @@ function NavBar() {
                 Contact
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/admin" onClick={closeNav}>
-                Admin
-              </NavLink>
-            </li>
           </ul>
         </nav>
       </div>
