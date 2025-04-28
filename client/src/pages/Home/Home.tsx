@@ -72,8 +72,8 @@ function Home() {
       </article>
       <section id="CV" className={activeSection === "CV" ? "show" : "hidden"}>
         <h2>The CV</h2>
-        <a href="/CyrusWEIRCVFR.pdf">EN</a>
-        <a href="/CyrusWEIRCVFR.pdf">FR</a>
+        <a href="/ENCyrusWEIR.pdf">EN</a>
+        <a href="/FRCyrusWEIR.pdf">FR</a>
       </section>
     </main>
   );
