@@ -3,7 +3,10 @@
 create table user (
   id int unsigned primary key auto_increment not null,
   email varchar(255) not null unique,
-  password varchar(255) not null
+  password varchar(255) not null,
+  isadmin boolean default false,
+  created_at datetime default current_timestamp,
+  updated_at datetime default current_timestamp on update current_timestamp
 );
 
 create table project (
@@ -23,9 +26,9 @@ create table message (
   message text
 );
 
-insert into user (id, email, password)
+insert into user (id, email, password, isadmin)
 values
-  (1, "jdoe@mail.com", "123456");
+  (1, "jdoe@mail.com", "123456", false);
 
 insert into project (name, url, image, tech, context, video)
 values
