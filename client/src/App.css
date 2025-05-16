@@ -334,6 +334,16 @@ video {
   background-color: #818181;
 }
 
+.login-form {
+  display: none;
+  gap: 16px;
+  border: 2px, white, solid;
+  border-radius: 28px;
+  padding: 16px;
+  min-width: 300px;
+  width: 20vw;
+}
+
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (min-width: 400px) {
   .overlay a {
